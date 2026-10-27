@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цветочный магазин: демо бота приёма заказов</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="demo">
+  <h1>Демо: бот приёма заказов</h1>
+  <div class="controls">
+    <label>Время суток
+      <select id="timeMode">
+        <option value="work">Рабочее время (9:00–20:00)</option>
+        <option value="off">Вне рабочего времени</option>
+      </select>
+    </label>
+    <button id="reset" type="button">Начать заново</button>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button type="button" data-tab="buyer" class="active">Покупатель</button>
+  <button type="button" data-tab="group">Группа флористов</button>
+</nav>
+
+<main>
+  <section class="panel active" id="buyer">
+    <h2 class="cap">Telegram покупателя</h2>
+    <div class="phone">
+      <div class="chat-head">
+        <div class="avatar">🌷</div>
+        <div><b>Цветочный магазин</b><small>бот</small></div>
+      </div>
+      <div class="messages" id="msgs"></div>
+      <div class="kbd" id="kbd"></div>
+      <form class="composer" id="form" autocomplete="off">
+        <input id="input" placeholder="Сообщение" aria-label="Сообщение">
+        <span id="counter"></span>
+        <button type="submit" aria-label="Отправить">➤</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="panel" id="group">
+    <h2 class="cap">Рабочая группа флористов</h2>
+    <div class="phone group">
+      <div class="chat-head">
+        <div class="avatar">💐</div>
+        <div><b>Флористы: заказы</b><small>2 участника</small></div>
+      </div>
+      <div class="who">
+        <label>Кнопку нажимает
+          <select id="florist"><option>Алина</option><option>Мадина</option></select>
+        </label>
+      </div>
+      <div class="messages" id="orders"></div>
+      <div id="toast" role="status"></div>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
